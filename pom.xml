@@ -10,7 +10,7 @@
 
     <groupId>com.halibobor</groupId>
     <artifactId>leveldb-project</artifactId>
-    <version>1.23.1</version>
+    <version>1.23.2</version>
     <packaging>pom</packaging>
 
     <description>Port of LevelDB to Java</description>

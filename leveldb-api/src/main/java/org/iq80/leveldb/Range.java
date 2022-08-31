@@ -18,11 +18,18 @@
 package org.iq80.leveldb;
 
 /**
+ * A range of keys.
  * @author <a href="http://hiramchirino.com">Hiram Chirino</a>
  */
 public class Range
 {
+    /**
+     * Included in the range.
+     */
     private final byte[] start;
+    /**
+     * Not included in the range.
+     */
     private final byte[] limit;
 
     public byte[] limit()

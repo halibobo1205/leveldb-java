@@ -32,7 +32,7 @@ public class WriteBatchImpl
         implements WriteBatch
 {
     private final List<Entry<Slice, Slice>> batch = new ArrayList<>();
-    private int approximateSize;
+    private int approximateSize = 12;
 
     public int getApproximateSize()
     {
@@ -69,6 +69,34 @@ public class WriteBatchImpl
         requireNonNull(key, "key is null");
         batch.add(Maps.immutableEntry(Slices.wrappedBuffer(key), (Slice) null));
         approximateSize += 6 + key.length;
+        return this;
+    }
+
+    @Override
+    public WriteBatchImpl clear()
+    {
+        batch.clear();
+        approximateSize = 12;
+        return this;
+    }
+
+    @Override
+    public long approximateSize()
+    {
+        return approximateSize;
+    }
+
+    @Override
+    public WriteBatchImpl append(WriteBatch source)
+    {
+        requireNonNull(source, "source is null");
+        if (source instanceof WriteBatchImpl) {
+            requireNonNull(((WriteBatchImpl) source).batch, "batch is null");
+            ((WriteBatchImpl) source).batch.forEach(e -> this.put(e.getKey(), e.getValue()));
+        }
+        else {
+            throw new UnsupportedOperationException();
+        }
         return this;
     }
 
