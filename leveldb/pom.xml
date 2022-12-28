@@ -3,9 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>io.github.tronprotocol</groupId>
+        <groupId>com.halibobor</groupId>
         <artifactId>leveldb-project</artifactId>
-        <version>1.18.2</version>
+        <version>1.18.3</version>
     </parent>
 
     <artifactId>leveldb</artifactId>
@@ -20,7 +20,7 @@
     <dependencies>
 
         <dependency>
-            <groupId>io.github.tronprotocol</groupId>
+            <groupId>com.halibobor</groupId>
             <artifactId>leveldb-api</artifactId>
         </dependency>
 
