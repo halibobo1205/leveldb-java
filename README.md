@@ -7,9 +7,9 @@ copies of the C++ code.
 
 # Current status
 
-Currently the code base is basically functional, but only trivially tested.
+Currently, the code base is basically functional, but only trivially tested.
 In some places, this code is a literal conversion of the C++ code and in
-others it has been converted to a more natural Java style.  The plan is to
+others, it has been converted to a more natural Java style.  The plan is to
 leave the code closer to the C++ original until the baseline performance has
 been established.
 
